@@ -1,0 +1,50 @@
+.btn {
+    text-transform: none !important;
+    box-shadow: none !important;
+    padding: 0.20rem 1rem;
+  }
+  
+
+  .card-default .card-header {
+    padding-top: 1rem !important;
+    padding-bottom: .60rem !important;
+  }
+
+  .table thead th {
+    text-transform: uppercase;
+    color: #13161e !important;
+    border-bottom: 0;
+  }
+
+  a {
+    color:white !important;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  a:hover {
+    color: #1f1e1e;
+    text-decoration: underline;
+    margin-bottom: 5px;
+  }
+
+  .table-bordered {
+    border: 2px solid #cdd1d7;
+}
+
+.table-bordered th, .table-bordered td {
+  border: 1px solid #cdd1d7;
+}
+
+input, button, select, optgroup, textarea {
+  color: black;
+}
+
+
+.form-control {
+  font-size: 1rem;
+  font-weight: 500;
+  color:rgb(33, 31, 31);
+  background-color: #ffffff;
+  border: 1px solid #b3b7bb;
+  
+}
