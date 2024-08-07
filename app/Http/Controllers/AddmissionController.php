@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Addmission;
+use App\Models\Department;
+use App\Models\Seat;
 class AddmissionController extends Controller
 {
     /**
@@ -20,7 +22,9 @@ class AddmissionController extends Controller
      */
     public function create()
     {
-       return view('pages.addmission.create');
+        $seat= Seat::all();
+        $dept=Department::all();
+        return view("pages.addmission.create", compact('seat', 'dept'));
     }
 
     /**
@@ -45,7 +49,10 @@ class AddmissionController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $addmission=Addmission::findorfail($id);
+        $dept=Department::all();
+    
+        return view('pages.Addmission.edit',compact('addmission','dept'));
     }
 
     /**
@@ -53,7 +60,10 @@ class AddmissionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $addmission=Addmission::findorfail($id);
+        // $addmission->update($request->all());
+        // return redirect()->route('addmissions.index');
+        dd($addmission);
     }
 
     /**

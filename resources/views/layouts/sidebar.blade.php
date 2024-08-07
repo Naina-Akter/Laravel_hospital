@@ -18,7 +18,7 @@
                 @include('layouts.menus.patient')
                 @include('layouts.menus.addmission')
                 @include('layouts.menus.presceiption')
-                @include('layouts.menus.bill')             
+                @include('layouts.menus.bill')
                 @include('layouts.menus.user')
                 @include('layouts.menus.signout')
 

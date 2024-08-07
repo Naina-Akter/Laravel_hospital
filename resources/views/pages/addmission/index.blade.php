@@ -30,9 +30,10 @@
           <td>{{$item->release_date}}</td>
           <td>{{$item->total_bill}}</td>
           <th class="text-center">
+            <a href="{{route('addmissions.edit', $item->id)}}">
           <button class="btn btn-primary text-dark"><b>EDIT</b></button>
           <button class="btn btn-danger text-dark"><b>Delete</b></button>
-              <button class="btn btn-info text-dark"><b>Show</b></button>
+          
             
           </th>
         </tr>

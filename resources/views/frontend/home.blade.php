@@ -87,7 +87,7 @@
                     
                     <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                              <img src="{{asset('')}}frontend/images/{{$item->img}}" class="img-responsive" alt="">
+                              <img src="{{asset('')}}assets/images/uploads/{{$item->img}}" class="img-responsive" alt="">
 
                               <div class="team-info">
                                    <h3>{{$item->name}}</h3>
@@ -204,13 +204,16 @@
 
                     <div class="col-md-6 col-sm-6">
                          <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action="#">
-
-                              <!-- SECTION TITLE -->
+                         
+                         
+                                       
                               <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
                                    <h2>Make an appointment</h2>
                               </div>
 
+
+                              <form action="{{route('store_app')}}" method="POST" id="appointment-form" role="form">
+                                   @csrf
                               <div class="wow fadeInUp" data-wow-delay="0.8s">
                                    <div class="col-md-6 col-sm-6">
                                         <label for="name">Name</label>
@@ -227,22 +230,22 @@
                                         <input type="date" name="date" value="" class="form-control">
                                    </div>
 
-                                   <div class="col-md-6 col-sm-6">
-                                        <label for="select">Select Department</label>
-                                        <select class="form-control">
-                                             <option>General Health</option>
-                                             <option>Cardiology</option>
-                                             <option>Dental</option>
-                                             <option>Medical Research</option>
+                                   <div class="form-group">
+                                        <label for="department">Department</label><br>
+                                        <select name="department_id" id="department_id">
+                                            <option disabled selected>Select a department</option>
+                                            @foreach ($department as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
                                         </select>
-                                   </div>
+                                      </div>
 
                                    <div class="col-md-12 col-sm-12">
                                         <label for="telephone">Phone Number</label>
                                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
                                         <label for="Message">Additional Message</label>
                                         <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
-                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
+                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Submit</button>
                                    </div>
                               </div>
                         </form>

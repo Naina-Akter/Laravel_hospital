@@ -13,6 +13,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
+        $doctor=Doctor::paginate(2);
       $doctor= Doctor::all();
       return view("pages.doctor.index", compact('doctor'));
     }

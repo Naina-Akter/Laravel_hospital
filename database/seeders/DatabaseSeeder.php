@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             TreatmentSeeder::class,
             AddmissionSeeder::class,
             PresceiptionSeeder::class,
-             
+            AppointmentSeeder::class,
         ]);
     }
 }

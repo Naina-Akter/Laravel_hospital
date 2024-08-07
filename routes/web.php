@@ -14,8 +14,10 @@ use App\Http\Controllers\PresceiptionController;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\UserController;
+use App\Models\Appointment;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::post('/',[HomeController::class, 'store_app'])->name('store_app');
 
 
 Route::resources([
