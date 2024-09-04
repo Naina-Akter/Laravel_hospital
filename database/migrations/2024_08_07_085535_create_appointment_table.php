@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('phone');
             $table->string('message');
+            $table->string('status')->default('0');
             $table->timestamps();
         });
     }

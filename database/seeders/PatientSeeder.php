@@ -20,7 +20,7 @@ class PatientSeeder extends Seeder
             'address' => 'Tangail',
             'email' => 'nasima@gmail.com',
             'phone' => '0179977135',
-            'gender' => 'Female',
+            'gender' => '2',
             'password' => Hash::make('patient123'),
             
         ]);
@@ -30,7 +30,7 @@ class PatientSeeder extends Seeder
             'address' => 'Savar',
             'email' => 'ali@gmail.com',
             'phone' => '01796097135',
-            'gender' => 'Male',
+            'gender' => '2',
             'password' => Hash::make('patient123'),
             
         ]);

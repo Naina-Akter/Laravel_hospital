@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table -> string('patient_name');
             $table->string('seat');
-            $table->integer('department_id');
+            $table->string('department');
             $table->string('addmission_date');
             $table->string('release_date');
             $table->string('total_bill');
+            $table->string('status')->default('0');
             $table->timestamps();
         });
     }

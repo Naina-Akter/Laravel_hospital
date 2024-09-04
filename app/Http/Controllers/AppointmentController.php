@@ -14,21 +14,22 @@ class AppointmentController extends Controller{
 
    public function index(){
       
-      $appoint= Appointment::all();
+      $appoint= Appointment::paginate(5);
      return view("pages.appointment.index",compact('appoint'));
       
    }
 
-  
-
-
-
-
-
-   public function destroy(string $id)
+   public function approve($id)
    {
-       $appoint = Appointment::findorfail($id);
-       $appoint->delete();
-       return back();
+      $appointment = Appointment::find($id);
+      $appointment->status = '1';
+      $appointment->update();
+      return redirect()->route('appointments.index');   
    }
+
+
+
+
+
+  
 }

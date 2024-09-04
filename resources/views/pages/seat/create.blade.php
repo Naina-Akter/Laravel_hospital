@@ -20,14 +20,7 @@
     <input type="text" class="form-control" id="name" name="cost" placeholder="Cost">
   </div>
 
-  <div class="form-group">
-    <label for="status">Status</label>
-    <select name="status" class="form-control">
-      <option selected disabled>Select One</option>
-      <option value="1">Available</option>
-      <option value="0">Unavailable</option>
-    </select>
-  </div>
+  
    
     <button type="submit" class="btn-lg btn btn-warning">Add New</button>
 

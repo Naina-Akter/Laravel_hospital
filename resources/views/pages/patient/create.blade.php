@@ -35,18 +35,15 @@
     <input type="text" class="form-control" id="email" name="email" placeholder="Patient Email">
   </div>
 
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="Patient password">
-  </div>
+  
 
   <div class="form-group">
     <label for="status">Gender</label>
     <select name="gender" class="form-control">
       <option selected disabled>Select One</option>
-      <option value="2">Male</option>
+      <option value="0">Male</option>
       <option value="1">Female</option>
-      <option value="0">Other</option>
+      <option value="2">Other</option>
     </select>
   </div>
    

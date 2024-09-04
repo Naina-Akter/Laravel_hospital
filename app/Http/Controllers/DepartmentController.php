@@ -11,7 +11,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $dept = Department::all();
+        $dept = Department::paginate(5);
         return view("pages.department.index", compact('dept'));
     }
 
@@ -66,6 +66,8 @@ class DepartmentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $dept=Department::find($id);
+        $dept->delete();
+        return back();
     }
 }

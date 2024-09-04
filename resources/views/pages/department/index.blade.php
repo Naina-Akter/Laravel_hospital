@@ -21,19 +21,24 @@
         <tr>
           <td scope="row">{{++$key}}</td>
           <td>{{$item->name}}</td>
-          <td>{{$item->status== 1? 'Active' : 'Inactive'}}</td> 
+          <td>{{$item->status== 0? 'Active' : 'Inactive'}}</td> 
 
           <th class="text-center">
           <a href="{{route('departments.edit', $item->id)}}">
           <button class="btn btn-primary text-dark"><b>EDIT</b></button>
-          <button class="btn btn-danger text-dark"><b>Delete</b></button>
-              <button class="btn btn-info text-dark"><b>Show</b></button>
-            
+           <form action="{{route('departments.destroy',$item->id)}}" method="post" class="d-inline">
+            @csrf
+            @method('DELETE')
+            <button type='submit' class="btn btn-danger text-dark" onclick="return(confirm('Are you sure to Delete?'))"><b>Delete</b></button>
+           </form>            
           </th>
         </tr>
         @endforeach
       </tbody>
     </table>
+  </div>
+  <div class="pt-2 mb-3">
+    {{$dept->links('pagination::bootstrap-5')}}
   </div>
 </div>
  

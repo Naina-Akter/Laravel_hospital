@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('page')
  
@@ -36,17 +37,13 @@
     <input type="text" class="form-control" value="{{old('email' ,$patient->email)}}" name="email" placeholder="Patient Email">
   </div>
 
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" value="{{old('password' ,$patient->password)}}" name="password" placeholder="Patient password">
-  </div>
-
+  
   <div class="form-group">
     <label for="status">Gender</label>
     <select name="gender" class="form-control">
-    <option value="2" {{ old('gender', $patient->gender) == 2 ? 'selected' : '' }}>Male</option>
+    <option value="0" {{ old('gender', $patient->gender) == 0 ? 'selected' : '' }}>Male</option>
     <option value="1" {{ old('gender', $patient->gender) == 1 ? 'selected' : '' }}>Female</option>
-    <option value="0" {{ old('gender', $patient->gender) == 0 ? 'selected' : '' }}>Other</option>
+    <option value="2" {{ old('gender', $patient->gender) == 2 ? 'selected' : '' }}>Other</option>
   </select>
   </div>
    

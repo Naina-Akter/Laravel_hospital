@@ -33,17 +33,24 @@
           <td>{{$item->email}}</td>
           <td>{{$item->phone}}</td>
           <td>{{$item->designation}}</td>
-          <td>{{$item->department}}</td>
+          <td>{{$item->dept->name}}</td>
           <th class="text-center">
             <a href="{{route('doctors.edit', $item->id)}}">
           <button class="btn btn-primary text-dark"><b>EDIT</b></button>
-          <button class="btn btn-danger text-dark"><b>Delete</b></button>        
+          <form action="{{route('doctors.destroy',$item->id)}}" method="post" class='d-inline'>
+            @csrf
+            @method('DELETE')
+          <button type='submit' class="btn btn-danger text-dark" onclick="return(confirm('Are You Sure to Delete?'))" ><b>Delete</b></button>   
+          </form>     
           </th>
         </tr>
         @endforeach
       </tbody>
     </table>
   </div>
+      <div class="px-5  mb-3">
+           {{$doctor->links('pagination::bootstrap-5')}}
+      </div>
 </div>
  
  

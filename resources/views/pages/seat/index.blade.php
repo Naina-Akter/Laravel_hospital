@@ -24,18 +24,21 @@
           <td>{{$item->title}}</td>
            
           <td>{{$item->cost}}</td>
-          <td>{{$item->status==1?  'Available' : 'Unavailable'}}</td>
+          <td>{{$item->status == 0 ? 'Available' : 'Booked'}}</td>
           <th class="text-center">
-            <a href="{{route('seats.edit', $item->id)}}"> 
-          <button class="btn btn-primary text-dark"><b>EDIT</b></button>
-          <button class="btn btn-danger text-dark"><b>Delete</b></button>
-           
+         <form action="{{route('seat_book',$item->id)}}" method="post">
+              @csrf
+          <button type="submit" class="btn btn-danger text-dark" @disabled($item->status==1)><b>Booked</b></button>
+           </form>
             
           </th>
         </tr>
         @endforeach
       </tbody>
     </table>
+  </div>
+  <div class="mb-4 pt-3">
+    {{$seat->links('pagination::bootstrap-5')}}
   </div>
 </div>
  

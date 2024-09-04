@@ -16,6 +16,7 @@
           <th scope="col">Addmission Date</th>
           <th scope="col">Release Date</th>
           <th scope="col">Total Bill</th>
+          <th scope="col">Status</th>
           <th class="text-center">Action</th>
         </tr>
       </thead>
@@ -29,11 +30,13 @@
           <td>{{$item->addmission_date}}</td>
           <td>{{$item->release_date}}</td>
           <td>{{$item->total_bill}}</td>
+          <td>{{$item->status == 0? 'release' : 'addmited'}}</td>
           <th class="text-center">
-            <a href="{{route('addmissions.edit', $item->id)}}">
-          <button class="btn btn-primary text-dark"><b>EDIT</b></button>
-          <button class="btn btn-danger text-dark"><b>Delete</b></button>
-          
+            <form action="{{route('addmited', $item->id)}}" method='post'>
+             @csrf
+           
+             <button type='submit' class="btn btn-danger text-dark" @disabled($item->status==1)><b>addmited</b></button>
+          </form>
             
           </th>
         </tr>

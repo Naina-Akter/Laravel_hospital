@@ -16,30 +16,39 @@
           <th scope="col">Email</th>
           <th scope="col">Phone</th>
           <th scope="col">Gender</th>
+          <th scope="col">Type</th>
           <th class="text-center">Action</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($patient as $key=>$item)
+          
+         @foreach($patient as $key=>$item)
+         
         <tr>
           <td scope="row">{{++$key}}</td>
-          
           <td>{{$item->name}}</td>
           <td>{{$item->age}}</td>
           <td>{{$item->address}}</td>
           <td>{{$item->email}}</td>
           <td>{{$item->phone}}</td>
-          <td>{{$item->gender == 1 ? 'Female' : ($item->gender == 2 ? 'Male' : 'Other') }}</td>
+          <td>{{$item->gender == 0 ? 'Male' : ($item->gender == 1 ? 'Female' : 'Other') }}</td>
+          <td>{{$item->type==0? 'Indoor' : 'Outdoor'}}</td>
           <th class="text-center">
-            <a href="{{route('patients.edit', $item->id)}}">
-          <button class="btn btn-primary text-dark"><b>EDIT</b></button>
-          <button class="btn btn-danger text-dark"><b>Delete</b></button>
+
+          <form action="{{route('addmission.admit',$item->id)}}" method="post">
+              @csrf
+              <button type="submit" class="btn btn-primary text-dark"><b>Admit</b></button>
+            </form>
             
           </th>
         </tr>
         @endforeach
       </tbody>
     </table>
+  </div>
+
+  <div class='mb-3 pt-2' >
+    {{$patient->links('pagination::bootstrap-5')}}
   </div>
 </div>
  

@@ -7,6 +7,7 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\PatientController;
@@ -21,7 +22,7 @@ Route::post('/',[HomeController::class, 'store_app'])->name('store_app');
 
 
 Route::resources([
-    'customers' => CustomerController::class,
+     
     'patients'=> PatientController::class,
     'doctors'=> DoctorController::class,
     'departments'=> DepartmentController::class,
@@ -36,7 +37,12 @@ Route::resources([
     'presceiptions' => PresceiptionController::class,
 ]);
 Auth::routes();
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Dashboard.........
+Route::get('/dashboard', [ App\Http\Controllers\HomeController::class, 'index'])->name('Dashboard');
 
+Route::post('appointment/{id}', [AppointmentController::class, 'approve'])->name('approved');
+Route::post('seat/{id}', [SeatController::class, 'booked'])->name('seat_book');
 
+// addmission....
+Route::post('addmission.admit ', [AddmissionController::class, 'admit '])->name('addmission.admit');
  

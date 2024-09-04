@@ -13,8 +13,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $doctor=Doctor::paginate(2);
-      $doctor= Doctor::all();
+         
+      $doctor= Doctor::paginate(5);
       return view("pages.doctor.index", compact('doctor'));
     }
 
@@ -91,6 +91,8 @@ class DoctorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $doctor=Doctor::find($id);
+        $doctor->delete();
+        return back();
     }
 }

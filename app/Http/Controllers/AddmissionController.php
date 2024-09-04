@@ -22,18 +22,15 @@ class AddmissionController extends Controller
      */
     public function create()
     {
-        $seat= Seat::all();
-        $dept=Department::all();
-        return view("pages.addmission.create", compact('seat', 'dept'));
+       
+             
+      
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+     
     public function store(Request $request)
     {
-       Addmission::create($request->all());
-       return redirect()->route('addmissions.index');
+        
     }
 
     /**
@@ -49,28 +46,24 @@ class AddmissionController extends Controller
      */
     public function edit(string $id)
     {
-        $addmission=Addmission::findorfail($id);
-        $dept=Department::all();
+         
+    }
+
     
-        return view('pages.Addmission.edit',compact('addmission','dept'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        $addmission=Addmission::findorfail($id);
-        // $addmission->update($request->all());
-        // return redirect()->route('addmissions.index');
-        dd($addmission);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
+ 
     public function destroy(string $id)
     {
-        //
+        
     }
+
+
+    public function admit(Request $request)
+    {
+        return view('pages.addmission.admit');
+
+         
+    }
+
+     
+
 }

@@ -20,6 +20,7 @@ http://www.tooplate.com/view/2098-health
      <link rel="stylesheet" href="{{asset('')}}frontend/css/bootstrap.min.css">
      <link rel="stylesheet" href="{{asset('')}}frontend/css/font-awesome.min.css">
      <link rel="stylesheet" href="{{asset('')}}frontend/css/animate.css">
+     <link rel="stylesheet" href="{{asset('')}}frontend/css/mycss.css">
      <link rel="stylesheet" href="{{asset('')}}frontend/css/owl.carousel.css">
      <link rel="stylesheet" href="{{asset('')}}frontend/css/owl.theme.default.min.css">
 

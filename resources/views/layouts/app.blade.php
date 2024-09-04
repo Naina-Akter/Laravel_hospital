@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta extension() />
-  <title>Hospital Managenent</title>
+  <title>Admin</title>
 
   <!-- theme meta -->
   <meta name="theme-name" content="mono" />
@@ -33,6 +33,8 @@
   <link href="{{asset('assets/images/favicon.png')}}" rel="shortcut icon" />
  
   <script src="{{asset('assets/plugins/nprogress/nprogress.js')}}"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 

@@ -12,7 +12,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient = Patient::all();
+        $patient = Patient::paginate(3);
         return view('pages.patient.index', compact('patient'));
     }
 
@@ -30,7 +30,6 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         Patient::create($request->all());
-        $input['password'] = Hash::make($request->password);
         return redirect()->route('patients.index');
     }
 
@@ -66,6 +65,8 @@ class PatientController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $patient=Patient::find($id);
+        $patient->delete();
+        return back();
     }
 }

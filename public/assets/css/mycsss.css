@@ -48,3 +48,17 @@ input, button, select, optgroup, textarea {
   border: 1px solid #b3b7bb;
   
 }
+
+.page-item.active .page-link {
+    
+    color: #ffffff;
+    background-color: #272627;
+    border-color: #491b82;
+}
+
+.page-link:hover {
+   
+  text-decoration: none;
+  background-color: #787981;
+  border-color:black;
+}

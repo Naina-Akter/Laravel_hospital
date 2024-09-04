@@ -19,8 +19,8 @@
     <label for="status">Status</label>
     <select name="status" class="form-control">
       <option selected disabled>Select One</option>
-      <option value="1">Active</option>
-      <option value="0">inactive</option>
+      <option value="0">Active</option>
+      <option value="1">inactive</option>
     </select>
   </div>
    

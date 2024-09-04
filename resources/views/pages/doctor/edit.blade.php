@@ -41,24 +41,20 @@
   <div class="form-group">
     <label for="department">Department</label>
      <select name="department" class="form-control">
-     <option selected>{{ old('department', $doctor->department) }}</option>
+     <option selected>{{ old('department', $doctor->dept->name) }}</option>
       @foreach ($dept as $item)
-      <option value="{{$item->name}}">{{$item->name}}</option>
+      <option value="{{$item->id}}">{{$item->name}}</option>
       @endforeach
      </select>
   </div>
-
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" value="{{old('password', $doctor->password)}}" name="password" placeholder="Enter Password">
-  </div>
+ 
   
   <div class="form-group">
     <label for="img">Img</label>
     <input type="file" class="form-control" id="img" name="img" placeholder="file">
   </div>
 
-  <button type="submit" class="btn-lg btn btn-warning">Add New</button>
+  <button type="submit" class="btn-lg btn btn-warning">Update</button>
     </form>
 
 

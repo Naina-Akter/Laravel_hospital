@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $doctor = Doctor::all();
+        $doctor = Doctor::orderby('id','desc')->paginate(3);
         $department= Department::all();
         return view('frontend.home', compact('doctor','department'));
     }

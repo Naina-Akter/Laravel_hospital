@@ -12,7 +12,7 @@ class SeatController extends Controller
      */
     public function index()
     {
-         $seat = Seat::all();
+         $seat = Seat::paginate(5);
          return view('pages.seat.index', compact('seat'));
     }
 
@@ -54,10 +54,11 @@ class SeatController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function booked(Request $request, string $id)
     {
         $seat =Seat::findorfail($id);
-        $seat->update($request->all());
+        $seat->status='1';
+        $seat->update();
         return redirect()->route('seats.index');
     }
 

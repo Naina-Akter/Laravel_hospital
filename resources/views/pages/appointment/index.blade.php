@@ -17,6 +17,7 @@
           <th scope="col">Date</th>
           <th scope="col">Department</th>        
           <th scope="col">Messages</th>
+          <th scope="col">Status</th>
           <th class="text-center">Action</th>
         </tr>
       </thead>
@@ -30,20 +31,22 @@
           <td>{{$item->date}}</td>
           <td>{{$item->department->name}}</td>
           <td>{{substr($item->message,0,20).'...'}}</td>
+          <td>{{$item->status == 0 ? 'Pending' : 'Approved'}}</td>
           
           <th class="text-center">
-            <a href="{{route('appointments.edit', $item->id)}}">
-          <button class="btn btn-primary text-dark"><b>Approve</b></button>
-          <form action="{{route('appointments.destroy', $item->id)}}" method="post" class="d-inline">
-            @csrf
-            @method('DELETE')
-            <button class="btn btn-danger" onclick="return(confirm('Are you sure to Delete?'))" type="submit">Delete</button>
-          </form>        
+            <form action="{{route('approved', $item->id)}}" method="post">
+              @csrf
+              <button type="submit" class="btn btn-primary text-dark" @disabled(
+              $item->status == 1)><b>Approve</b></button>
+            </form>
           </th>
-        </tr>
+        </tr> 
         @endforeach
       </tbody>
     </table>
+  </div>
+  <div class="pt-2 mb-3">
+    {{$appoint->links('pagination::bootstrap-5')}}
   </div>
 </div>
  

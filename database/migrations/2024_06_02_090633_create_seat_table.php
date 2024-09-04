@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('seat', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('department');
             $table->string('cost');
-            $table->string('status')->default('Available');
+            $table->string('status')->default('0');
             $table->timestamps();
         });
     }

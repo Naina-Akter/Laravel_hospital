@@ -16,7 +16,7 @@ class DoctorSeeder extends Seeder
     {
         DB::table('doctor')->insert([
             'name' => 'Assoc. Prof. Dr. Naz Yasmin',
-            'img' => '',
+            'img' => 'ss.webp',
             'qualification' => 'MBBS (DMC), FCPS (BCPS), MS (DU)',
             'fee' => '800',
             'email' => 'doctor@gmail.com',
@@ -27,7 +27,7 @@ class DoctorSeeder extends Seeder
         ]);
         DB::table('doctor')->insert([
             'name' => 'Prof. Dr. Wahida Khan',
-            'img' => '',
+            'img' => 'jannatul .webp',
             'qualification' => 'MBBS, MD (Cardiology)',
             'fee' => '1000',
             'email' => 'wahida@gmail.com',
@@ -38,7 +38,7 @@ class DoctorSeeder extends Seeder
         ]);
         DB::table('doctor')->insert([
             'name' => 'Rasel Ahmed',
-            'img' => '',
+            'img' => 'Dr.webp',
             'qualification' => 'MBBS, MD (Cardiology)',
             'fee' => '1000',
             'email' => 'rasel@gmail.com',
